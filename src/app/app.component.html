@@ -1,0 +1,108 @@
+<div class="container" style="background: #e0dbdb;">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12" style="border: 1px solid grey">
+      <h2>SpaceX Launch Programs</h2>
+      <div class="row">
+        <div class="col-xs-4 col-sm-4 col-md-4">
+          <div class="cardFilter">
+            <h3 style="color: black">Filters</h3>
+            <!-- <div class="row"> -->
+              <!-- <div classs="col-xs-12 col-sm-12 col-md-12"> -->
+                 <p style="color: black;">Launch Year</p>
+                 <hr>
+              <!-- </div> -->
+            <!-- </div> -->
+          
+            <div class="cardFilterYear" *ngFor="let launch of launchCompleteDetails, let i = index" style="display:inline-block;">
+              <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12" (click)="searchLaunches(launch.launch_year)">
+                  <label style="color: black;">{{launch.launch_year}}</label>
+                  </div>
+                  </div>
+            </div>
+            <br>
+          </div>
+          <div class="cardFilter">
+          <p style="color: black;">Successful Launch</p>
+            <hr>
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+              <div class="row" style="flex-wrap: unset;">
+              <div class="col-xs-6 col-sm-6 col-md-6">
+                <label style="color: black; float: right; background: rgb(32, 230, 49); width: 55%;">True</label>
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-6">
+                <label style="color: black; background: rgb(32, 230, 49); width: 55%;">False</label>
+              </div>
+            </div>
+            </div>
+          </div>
+          <br>
+          <p style="color: black;">Successful Landing</p>
+            <hr>
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+              <div class="row" style="flex-wrap: unset;">
+              <div class="col-xs-6 col-sm-6 col-md-6">
+                <label style="color: black; float: right; background: rgb(32, 230, 49); width: 55%;">True</label>
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-6">
+                <label style="color: black; background: rgb(32, 230, 49); width: 55%;">False</label>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+          
+        </div>
+        <div class="col-xs-8 col-sm-8 col-md-8" style="background: #e0dbdb;">
+        <div class="card" *ngFor="let launch of launchCompleteDetails, let i = index" style="display:inline-block;">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+              <img [src]="launch.links.mission_patch_small" alt="">
+            </div>
+          </div>  
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+              <label style="color: blue;">{{launch.mission_name}} #{{i+1}}</label>
+            </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12">
+                <label style="color: black; font-weight: 500;">Mission id: </label>
+                <label style="color: black;">{{launch.mission_id}}</label>
+                <!-- <ul>
+                  <li style="color: black;">{{launch.mission_id}}</li>
+                </ul> -->
+              </div>
+              </div>
+
+              <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                  <label style="color: black;">Launch Year:</label>
+                  <label style="color: black;">{{launch.launch_year}}</label>
+                </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-12">
+                    <label style="color: black;">Successful launch:</label>
+                    <label style="color: black;">{{launch.launch_success}}</label>
+                  </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                      <label style="color: black;">Successful Lancding:</label>
+                      <label style="color: black;">{{launch.launch_landing}}</label>
+                    </div>
+                    </div> 
+          
+        </div>
+      </div>
+
+
+      </div>  
+    </div>
+  </div>
+  </div>
